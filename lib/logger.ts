@@ -10,9 +10,6 @@ module.exports = winston.createLogger({
     new winston.transports.Console({
       level: process.env.NODE_ENV === "test" ? "error" : "info",
     }),
-    new winston.transports.File({
-      filename: `/Users/derian.tungka/DDrepos/juice-shop/app.log`,
-    }),
   ],
   format: winston.format.simple(),
   exitOnError: false,
