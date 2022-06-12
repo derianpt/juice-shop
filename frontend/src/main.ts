@@ -8,6 +8,23 @@ import { platformBrowserDynamic } from '@angular/platform-browser-dynamic'
 
 import { AppModule } from './app/app.module'
 import { environment } from './environments/environment'
+import { datadogRum } from "@datadog/browser-rum";
+
+datadogRum.init({
+  applicationId: "b42307fb-ff98-46d6-8e9a-775835859486",
+  clientToken: "pub32fa20c16ad226ea6d50b8170b4bf5d5",
+  site: "datadoghq.com",
+  service: "derian-juiceshop",
+  env: "local",
+  // Specify a version number to identify the deployed version of your application in Datadog
+  // version: '1.0.0',
+  sampleRate: 100,
+  premiumSampleRate: 100,
+  trackInteractions: true,
+  defaultPrivacyLevel: "mask-user-input",
+});
+
+datadogRum.startSessionReplayRecording();
 
 if (environment.production) {
   enableProdMode()
