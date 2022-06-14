@@ -8,9 +8,10 @@ import winston = require('winston')
 module.exports = winston.createLogger({
   transports: [
     new winston.transports.Console({
-      level: process.env.NODE_ENV === "test" ? "error" : "info",
+      level: process.env.NODE_ENV === 'test' ? 'error' : 'info',
     }),
+    new winston.transports.File({ filename: 'combined.log' }),
   ],
-  format: winston.format.simple(),
+  format: winston.format.json(),
   exitOnError: false,
-});
+})

@@ -11,10 +11,11 @@ import { environment } from './environments/environment'
 import { datadogRum } from "@datadog/browser-rum";
 
 datadogRum.init({
-  applicationId: "b5d37a1f-2cd1-443d-9f94-9e1272d9c5c8",
-  clientToken: "pub9e3ca1c02e83197c770e2172316c6515",
+  applicationId: "b42307fb-ff98-46d6-8e9a-775835859486",
+  clientToken: "pub32fa20c16ad226ea6d50b8170b4bf5d5",
   site: "datadoghq.com",
-  service: "juiceshop",
+  // to differentiate from BE service which is `juice-shop`
+  service: "juice-shop-fe",
   env: "dev",
   sampleRate: 100,
   premiumSampleRate: 100,
