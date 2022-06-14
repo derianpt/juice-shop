@@ -10,7 +10,7 @@ module.exports = winston.createLogger({
     new winston.transports.Console({
       level: process.env.NODE_ENV === 'test' ? 'error' : 'info',
     }),
-    new winston.transports.File({ filename: 'combined.log' }),
+    new winston.transports.File({ filename: 'logs/application.log' }),
   ],
   format: winston.format.json(),
   exitOnError: false,
