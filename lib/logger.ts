@@ -10,7 +10,10 @@ module.exports = winston.createLogger({
     new winston.transports.Console({
       level: process.env.NODE_ENV === "test" ? "error" : "info",
     }),
+    new winston.transports.File({
+      filename: `/home/ubuntu/juice-shop/logs/app.log`,
+    }),
   ],
-  format: winston.format.simple(),
+  format: winston.format.json(),
   exitOnError: false,
 });

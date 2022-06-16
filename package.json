@@ -63,7 +63,7 @@
     "protractor": "npm run e2e",
     "serve": "concurrently --kill-others \"ts-node app.ts\" \"cd frontend && ng serve\"",
     "serve:dev": "concurrently --kill-others \"ts-node-dev app.ts\" \"cd frontend && ng serve\"",
-    "start": "DD_LOGS_INJECTION=true node build/app",
+    "start": "DD_LOGS_INJECTION=true DD_APPSEC_ENABLED=true node build/app",
     "test": "cd frontend && ng test --watch=false --source-map=true && cd .. && npm run test:server",
     "test:chromium": "cd frontend && ng test --watch=false --source-map=false --browsers=ChromiumHeadless && cd .. && npm run test:server",
     "test:server": "nyc --report-dir=./build/reports/coverage/server-tests mocha -r ts-node/register -r source-map-support/register --recursive test/server/**/*.ts",
@@ -110,6 +110,8 @@
     ]
   },
   "dependencies": {
+    "@datadog/browser-logs": "^4.11.3",
+    "@datadog/browser-rum": "^4.11.3",
     "body-parser": "^1.19.0",
     "check-dependencies": "^1.1.0",
     "clarinet": "^0.12.4",

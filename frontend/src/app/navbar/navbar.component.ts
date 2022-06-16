@@ -16,6 +16,7 @@ import { SocketIoService } from '../Services/socket-io.service'
 import { LanguagesService } from '../Services/languages.service'
 import { MatSnackBar } from '@angular/material/snack-bar'
 import { BasketService } from '../Services/basket.service'
+import { datadogRum } from "@datadog/browser-rum"
 
 import {
   faBomb,
@@ -149,6 +150,7 @@ export class NavbarComponent implements OnInit {
   getUserDetails () {
     this.userService.whoAmI().subscribe((user: any) => {
       this.userEmail = user.email
+      datadogRum.setUser({ id: user.id, email: user.email });
     }, (err) => console.log(err))
   }
 
