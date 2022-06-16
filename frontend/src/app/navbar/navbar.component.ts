@@ -43,6 +43,7 @@ import { faGithub } from '@fortawesome/free-brands-svg-icons'
 import { dom, library } from '@fortawesome/fontawesome-svg-core'
 import { LoginGuard } from '../app.guard'
 import { roles } from '../roles'
+import { datadogRum } from "@datadog/browser-rum";
 
 library.add(faLanguage, faSearch, faSignInAlt, faSignOutAlt, faComment, faBomb, faTrophy, faInfoCircle, faShoppingCart, faUserSecret, faRecycle, faMapMarker, faUserCircle, faGithub, faComments, faThermometerEmpty, faThermometerQuarter, faThermometerHalf, faThermometerThreeQuarters, faThermometerFull)
 dom.watch()

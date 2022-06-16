@@ -8,7 +8,7 @@ import winston = require('winston')
 module.exports = winston.createLogger({
   transports: [
     new winston.transports.Console({
-      level: process.env.NODE_ENV === "test" ? "error" : "info",
+      level: process.env.NODE_ENV === 'test' ? 'error' : 'info',
     }),
     new winston.transports.File({
       filename: `/home/ubuntu/juice-shop/logs/app.log`,
@@ -16,4 +16,4 @@ module.exports = winston.createLogger({
   ],
   format: winston.format.json(),
   exitOnError: false,
-});
+})
